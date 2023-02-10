@@ -1,5 +1,6 @@
 import { User } from ".prisma/client"
 
-type UserData = Omit<User, "id" | "createdAt" | "updatedAt">
+type UserData = Omit<User, "createdAt" | "updatedAt">
+type UserBody = Omit<UserData, "id">
 
-export { UserData }
+export { UserData, UserBody }
