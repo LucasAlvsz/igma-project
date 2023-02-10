@@ -17,7 +17,7 @@ const createUserData = (overrides?: Partial<User>) => ({
 	id: parseInt(faker.random.numeric()),
 	name: faker.name.fullName(),
 	cpf: generateValidCPF(),
-	birthDate: faker.date.past(),
+	birthDate: faker.date.birthdate(),
 	...overrides,
 })
 
