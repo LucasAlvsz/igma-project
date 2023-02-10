@@ -1,7 +1,4 @@
 import Joi from "joi"
-
-const DATE_FORMAT = "YYYY-MM-DD"
-
 const MESSAGES = {
 	"cpf.pattern.invalid": "Invalid CPF Format",
 	"cpf.invalid": "Invalid CPF",
@@ -48,7 +45,6 @@ const validateCpf = (cpf: string, helpers: Joi.CustomHelpers) => {
 }
 
 export default {
-	DATE_FORMAT,
 	MESSAGES,
 	validateCpf,
 	calculateCpfCheckSum,

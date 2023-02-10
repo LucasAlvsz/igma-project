@@ -1,19 +1,15 @@
-import { userRepository } from "@/respositories"
+import { UserBody } from "@/types/userTypes"
 import { ConflictError } from "@/errors"
-import { UserData } from "@/types/userTypes"
+import { userService } from "@/services"
+import { userRepository } from "@/respositories"
 
-const createUser = async (user: UserData): Promise<void> => {
-	if (await userExists(user.cpf))
+const createUser = async (user: UserBody): Promise<void> => {
+	if (await userService.userExists(user.cpf))
 		throw new ConflictError("User already exists")
 
 	await userRepository.create(user)
 }
 
-const userExists = async (cpf: string): Promise<UserData | null> => {
-	return await userRepository.getByCpf(cpf)
-}
-
 export default {
 	createUser,
-	userExists,
 }

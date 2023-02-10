@@ -12,7 +12,7 @@
 		"prestart": "npm run prisma:deploy && npm run build",
 		"start": "node build/server.js",
 		"test": "prisma migrate dev && jest --passWithNoTests",
-		"test:local": "jest --passWithNoTests --watch",
+		"test:local": "jest --passWithNoTests",
 		"test:staged": "npm run test:local --findRelatedTests"
 	},
 	"dependencies": {

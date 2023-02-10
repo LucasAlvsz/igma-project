@@ -3,9 +3,9 @@ import { Request, Response } from "express"
 import { authService } from "@/services"
 
 const signUp = async (req: Request, res: Response) => {
-	const userData = req.body
+	const userBody = req.body
 
-	await authService.createUser(userData)
+	await authService.createUser(userBody)
 	res.sendStatus(201)
 }
 

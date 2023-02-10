@@ -1,14 +1,11 @@
 import Joi from "joi"
-import { UserData } from "@/types/userTypes"
-import authSchemaUtils from "./authSchemaUtils"
+import { UserBody } from "@/types/userTypes"
+import cpfSchema from "./cpfSchema"
 
-const bodySchema = Joi.object<UserData>({
+const bodySchema = Joi.object<UserBody>({
 	name: Joi.string().required(),
-	cpf: Joi.string()
-		.messages(authSchemaUtils.MESSAGES)
-		.custom(authSchemaUtils.validateCpf)
-		.required(),
 	birthDate: Joi.date().iso().required(),
+	cpf: cpfSchema,
 }).options({ allowUnknown: false })
 
 const signUpSchema = Joi.object({
