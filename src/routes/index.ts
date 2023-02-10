@@ -10,7 +10,7 @@ const router = Router()
 router
 	.get("/health", (req, res) => res.send("OK"))
 	.use(authRouter)
-	.use("/customers", userRouter)
+	.use("/users", userRouter)
 	.use(handleError)
 
 export default router
