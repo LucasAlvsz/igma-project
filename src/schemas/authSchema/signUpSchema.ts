@@ -1,16 +1,14 @@
-import JoiBase from "joi"
-import JoiDate from "@joi/date"
+import Joi from "joi"
+import { UserData } from "@/types/userTypes"
 import authSchemaUtils from "./authSchemaUtils"
 
-const Joi = JoiBase.extend(JoiDate)
-
-const bodySchema = Joi.object({
+const bodySchema = Joi.object<UserData>({
 	name: Joi.string().required(),
 	cpf: Joi.string()
 		.messages(authSchemaUtils.MESSAGES)
 		.custom(authSchemaUtils.validateCpf)
 		.required(),
-	birthDate: Joi.date().format(authSchemaUtils.DATE_FORMAT).required(),
+	birthDate: Joi.date().iso().required(),
 }).options({ allowUnknown: false })
 
 const signUpSchema = Joi.object({
