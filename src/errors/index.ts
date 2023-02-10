@@ -8,4 +8,10 @@ class AppError {
 	}
 }
 
-export { AppError }
+class UnprocessableEntityError extends AppError {
+	constructor(message: string) {
+		super(422, message)
+	}
+}
+
+export { AppError, UnprocessableEntityError }
