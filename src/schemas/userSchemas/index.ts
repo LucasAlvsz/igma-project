@@ -1,3 +1,4 @@
 import getByCpfSchema from "./getUserByCpfSchema"
+import getAllUsersSchema from "./getAllUsersSchema"
 
-export default { getByCpfSchema }
+export default { getByCpfSchema, getAllUsersSchema }

@@ -6,10 +6,16 @@ import { userController } from "@/controllers"
 
 const userRouter = Router()
 
-userRouter.get(
-	"/:cpf",
-	validateSchema(userSchemas.getByCpfSchema),
-	userController.getByCpf
-)
+userRouter
+	.get(
+		"/:cpf",
+		validateSchema(userSchemas.getByCpfSchema),
+		userController.getuserByCpf
+	)
+	.get(
+		"",
+		validateSchema(userSchemas.getAllUsersSchema),
+		userController.getAllUsers
+	)
 
 export default userRouter
