@@ -6,7 +6,7 @@ jobs:
         steps:
             - name: Check out repository code
               uses: actions/checkout@v3
-            - name: Make dynamic env_file
+            - name: Make dynamic env file
               uses: SpicyPizza/create-envfile@v1.3
               with:
                   envkey_POSTGRES_USER: "postgres"

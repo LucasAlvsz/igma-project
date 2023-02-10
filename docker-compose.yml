@@ -1,0 +1,25 @@
+version: "3"
+services:
+    igma-postgres-db:
+        image: postgres
+        container_name: igma-postgres-db
+        restart: always
+        ports:
+            - "1234:5432"
+        env_file:
+            - ./.env
+        volumes:
+            - postgres-db-volume:/var/lib/postgresql/data
+
+    igma-api:
+        container_name: igma-api
+        build: .
+        ports:
+            - 80:5000
+        depends_on:
+            - igma-postgres-db
+        env_file:
+            - .env
+
+volumes:
+    postgres-db-volume:
