@@ -2,7 +2,7 @@ import supertest from "supertest"
 import app from "@/app"
 import { prisma } from "@/config"
 import { userRepository } from "@/respositories"
-import { userFactory } from "../factories"
+import { userFactory } from "../../factories"
 
 const agent = supertest(app)
 
@@ -14,7 +14,11 @@ beforeEach(async () => {
 	await prisma.user.deleteMany()
 })
 
-describe("Sign Up", () => {
+afterAll(async () => {
+	await prisma.$disconnect().catch((err) => console.error(err))
+})
+
+describe("POST /sign-up", () => {
 	it("should create a new user", async () => {
 		const userBody = userFactory.createUserBody()
 		console.log(userBody)
