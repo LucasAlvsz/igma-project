@@ -1,5 +1,5 @@
 import { userRepository } from "@/respositories"
-import { authService } from "@/services"
+import { userService } from "@/services"
 import { userFactory } from "../../factories"
 
 beforeEach(() => {
@@ -9,9 +9,10 @@ beforeEach(() => {
 describe("User Exists", () => {
 	it("should return a user if it exists", async () => {
 		const userData = userFactory.createUserData()
+
 		jest.spyOn(userRepository, "getByCpf").mockResolvedValue(userData)
 
-		const user = await authService.userExists(userData.cpf)
+		const user = await userService.userExists(userData.cpf)
 		expect(user).toEqual(userData)
 		expect(userRepository.getByCpf).toHaveBeenCalledTimes(1)
 		expect(userRepository.getByCpf).toHaveBeenCalledWith(userData.cpf)
@@ -21,7 +22,7 @@ describe("User Exists", () => {
 
 		jest.spyOn(userRepository, "getByCpf").mockResolvedValue(null)
 
-		const user = await authService.userExists(userData.cpf)
+		const user = await userService.userExists(userData.cpf)
 		expect(user).toBeNull()
 		expect(userRepository.getByCpf).toHaveBeenCalledTimes(1)
 		expect(userRepository.getByCpf).toHaveBeenCalledWith(userData.cpf)

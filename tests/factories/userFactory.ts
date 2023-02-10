@@ -1,6 +1,7 @@
-import { User } from ".prisma/client"
-import authSchemaUtils from "@/schemas/authSchema/authSchemaUtils"
 import { faker } from "@faker-js/faker"
+import { User } from ".prisma/client"
+import { UserBody } from "@/types/userTypes"
+import authSchemaUtils from "@/schemas/authSchemas/authSchemaUtils"
 
 const generateValidCPF = () => {
 	const cpfArray = faker.random.numeric(9).split("")
@@ -13,8 +14,17 @@ const generateValidCPF = () => {
 	return cpfArray.join("")
 }
 
-const createUserData = (overrides?: Partial<User>) => ({
+const createUserData = (overrides?: Partial<User>): User => ({
 	id: parseInt(faker.random.numeric()),
+	name: faker.name.fullName(),
+	cpf: generateValidCPF(),
+	birthDate: faker.date.birthdate(),
+	createdAt: faker.date.past(),
+	updatedAt: faker.date.past(),
+	...overrides,
+})
+
+const createUserBody = (overrides?: Partial<UserBody>): UserBody => ({
 	name: faker.name.fullName(),
 	cpf: generateValidCPF(),
 	birthDate: faker.date.birthdate(),
@@ -23,4 +33,5 @@ const createUserData = (overrides?: Partial<User>) => ({
 
 export default {
 	createUserData,
+	createUserBody,
 }
