@@ -11,9 +11,9 @@
 		"build": "tsup src --outDir build --format esm",
 		"prestart": "npm run prisma:deploy && npm run build",
 		"start": "node build/server.js",
-		"test": "prisma:deploy && jest --passWithNoTests",
-		"test:staged": "npm run test --findRelatedTests",
-		"lint-staged": "lint-staged"
+		"test": "npm run prisma migrate dev && jest --passWithNoTests",
+		"test:local": "jest --passWithNoTests --watch",
+		"test:staged": "npm run test:local --findRelatedTests"
 	},
 	"dependencies": {
 		"@joi/date": "^2.1.0",
