@@ -32,6 +32,7 @@ const createUserBody = (overrides?: Partial<UserBody>): UserBody => ({
 })
 
 export default {
+	generateValidCPF,
 	createUserData,
 	createUserBody,
 }

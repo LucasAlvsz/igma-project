@@ -16,20 +16,23 @@ beforeEach(async () => {
 
 describe("Sign Up", () => {
 	it("should create a new user", async () => {
-		const userData = userFactory.createUserData()
-		delete userData.id
-		const response = await agent.post("/sign-up").send(userData)
+		const userBody = userFactory.createUserBody()
+		console.log(userBody)
+		const response = await agent.post("/sign-up").send(userBody)
 		expect(response.status).toBe(201)
 
-		const createdUser = await userRepository.getByCpf(userData.cpf)
+		const createdUser = await userRepository.getByCpf(userBody.cpf)
 		expect(createdUser).not.toBeNull()
+		expect(createdUser.cpf).toBe(userBody.cpf)
+		expect(createdUser.name).toBe(userBody.name)
+		expect(createdUser.birthDate).toEqual(userBody.birthDate)
 	})
 
 	it("should not create a new user if cpf already exists", async () => {
-		const userData = userFactory.createUserData()
-		delete userData.id
-		await userRepository.create(userData)
-		const response = await agent.post("/sign-up").send(userData)
+		const userBody = userFactory.createUserBody()
+		await userRepository.create(userBody)
+
+		const response = await agent.post("/sign-up").send(userBody)
 		expect(response.status).toBe(409)
 	})
 })
