@@ -28,6 +28,7 @@ const validateCpfPattern = (cpf: string) => {
 const validateDigit = (checkedSum: number, digit: number) => {
 	const remainder = checkedSum % 11
 	const calculatedDigit = remainder < 2 ? 0 : 11 - remainder
+	console.log(calculatedDigit, digit)
 	return calculatedDigit === digit ? digit : null
 }
 
@@ -39,16 +40,17 @@ const validateCpf = (cpf: string, helpers: Joi.CustomHelpers) => {
 
 	let checkedSum = calculateCpfCheckSum(formattedCpfForValidation, 10)
 	const firstDigit = validateDigit(checkedSum, parseInt(formattedCpf[9]))
-	if (!firstDigit) return helpers.error("cpf.invalid")
+	if (firstDigit === null) return helpers.error("cpf.invalid")
 
 	formattedCpfForValidation.push(firstDigit.toString())
 	checkedSum = calculateCpfCheckSum(formattedCpfForValidation, 11)
 	const secondDigit = validateDigit(checkedSum, parseInt(formattedCpf[10]))
-	if (!secondDigit) return helpers.error("cpf.invalid")
+	if (secondDigit === null) return helpers.error("cpf.invalid")
 }
 
 export default {
 	DATE_FORMAT,
 	MESSAGES,
 	validateCpf,
+	calculateCpfCheckSum,
 }
