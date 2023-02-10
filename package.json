@@ -10,10 +10,11 @@
 		"build": "tsup src --outDir build --format esm",
 		"prestart": "npm run build",
 		"start": "node build/server.js",
-		"test": "jest",
+		"test": "jest --passWithNoTests",
 		"test:staged": "test --findRelatedTests"
 	},
 	"dependencies": {
+		"@joi/date": "^2.1.0",
 		"cors": "^2.8.5",
 		"dotenv": "^16.0.3",
 		"express": "^4.18.2",
