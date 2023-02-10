@@ -14,7 +14,7 @@
 		"start": "node build/server.js",
 		"test": "jest --passWithNoTests -i",
 		"test:remote": "prisma:dev && npm run test",
-		"test:local": "jest --passWithNoTests -i --watch",
+		"test:local": "npm run test --watch",
 		"test:staged": "npm run test --findRelatedTests"
 	},
 	"dependencies": {
