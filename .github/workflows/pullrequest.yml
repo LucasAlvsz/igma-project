@@ -16,4 +16,4 @@ jobs:
                   envkey_PRISMA_ENV: "test"
                   file_name: .env.test
             - name: Run tests
-              run: docker-compose -f docker-compose-tests.yml run api-ci npm run test
+              run: docker-compose -f docker-compose-tests.yml run api-ci npm run test:remote

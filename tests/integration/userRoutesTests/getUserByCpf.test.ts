@@ -2,7 +2,7 @@ import supertest from "supertest"
 import app from "@/app"
 import { prisma } from "@/config"
 import { userRepository } from "@/respositories"
-import { userFactory } from "../factories"
+import { userFactory } from "../../factories"
 
 const agent = supertest(app)
 
@@ -12,6 +12,10 @@ beforeAll(async () => {
 
 beforeEach(async () => {
 	await prisma.user.deleteMany()
+})
+
+afterAll(async () => {
+	await prisma.$disconnect().catch((err) => console.error(err))
 })
 
 describe("Get User By CPF", () => {

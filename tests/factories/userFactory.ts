@@ -31,8 +31,24 @@ const createUserBody = (overrides?: Partial<UserBody>): UserBody => ({
 	...overrides,
 })
 
+const createManyUsersData = (amount: number): User[] => {
+	const users = []
+	for (let i = 0; i < amount; i++) users.push(createUserData())
+
+	return users
+}
+
+const createManyUsersBody = (amount: number): UserBody[] => {
+	const users = []
+	for (let i = 0; i < amount; i++) users.push(createUserBody())
+
+	return users
+}
+
 export default {
 	generateValidCPF,
 	createUserData,
 	createUserBody,
+	createManyUsersData,
+	createManyUsersBody,
 }
