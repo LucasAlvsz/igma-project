@@ -12,8 +12,8 @@ const createUser = async (user: UserData): Promise<void> => {
 	})
 }
 
-const userExists = async (username: string): Promise<UserData | null> => {
-	const user = await userRepository.getByCpf(username)
+const userExists = async (cpf: string): Promise<UserData | null> => {
+	const user = await userRepository.getByCpf(cpf)
 	return user
 }
 
