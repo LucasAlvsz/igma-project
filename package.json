@@ -11,7 +11,8 @@
 		"prestart": "npm run build",
 		"start": "node build/server.js",
 		"test": "jest --passWithNoTests",
-		"test:staged": "npm run test --findRelatedTests"
+		"test:staged": "npm run test --findRelatedTests",
+		"lint-staged": "lint-staged"
 	},
 	"dependencies": {
 		"@joi/date": "^2.1.0",
