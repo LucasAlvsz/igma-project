@@ -6,6 +6,10 @@ import { userFactory } from "../factories"
 
 const agent = supertest(app)
 
+beforeAll(async () => {
+	await prisma.$connect().catch((err) => console.error(err))
+})
+
 beforeEach(async () => {
 	await prisma.user.deleteMany()
 })
