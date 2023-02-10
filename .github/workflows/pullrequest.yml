@@ -13,6 +13,7 @@ jobs:
                   envkey_POSTGRES_PASSWORD: "postgres"
                   envkey_POSTGRES_DB: "tests"
                   envkey_DATABASE_URL: "postgresql://postgres:postgres@database-ci:5432/tests"
+                  envkey_PRISMA_ENV: "test"
                   file_name: .env.test
             - name: Run tests
-              run: docker-compose -f docker-compose-tests.yml run api-ci npm run test
+              run: docker-compose -f docker-compose-tests.yml run api-ci npm run prisma:deploy && npm run test
