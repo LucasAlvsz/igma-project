@@ -28,7 +28,6 @@ const validateCpfPattern = (cpf: string) => {
 const validateDigit = (checkedSum: number, digit: number) => {
 	const remainder = checkedSum % 11
 	const calculatedDigit = remainder < 2 ? 0 : 11 - remainder
-	console.log(calculatedDigit, digit)
 	return calculatedDigit === digit ? digit : null
 }
 

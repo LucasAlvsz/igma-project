@@ -3,6 +3,7 @@ import cors from "cors"
 import "dotenv/config"
 
 import router from "@/routes"
+import { userFactory } from "../tests/factories"
 
 const app = express()
 app.use(cors())

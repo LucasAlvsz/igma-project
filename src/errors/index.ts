@@ -14,4 +14,10 @@ class UnprocessableEntityError extends AppError {
 	}
 }
 
-export { AppError, UnprocessableEntityError }
+class ConflictError extends AppError {
+	constructor(message: string) {
+		super(409, message)
+	}
+}
+
+export { AppError, UnprocessableEntityError, ConflictError }
