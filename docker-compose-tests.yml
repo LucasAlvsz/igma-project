@@ -1,0 +1,20 @@
+version: "3"
+services:
+    database-ci:
+        image: postgres
+        container_name: database-ci
+        restart: always
+        ports:
+            - "1234:5432"
+        env_file:
+            - .env.test
+
+    api-ci:
+        container_name: api-ci
+        build: .
+        ports:
+            - 5000:5000
+        depends_on:
+            - database-ci
+        env_file:
+            - .env.test
