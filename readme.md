@@ -55,7 +55,6 @@ Igma project is a RESTful API project built using TypeScript. The project provid
 
 -   [Run Locally](#run-locally)
 
-
 ## API Reference
 
 #### Sign-up
@@ -177,8 +176,6 @@ To run this project, you will need to add the following environment variables to
 
 > Remember to create a .env file with the environment variables in the root of the project.
 
-<a name="without-docker-run"></a>
-
 ### Without Docker:
 
 > You will need to have Node.js and PostgreSQL installed on your machine
@@ -199,6 +196,30 @@ Install the dependencies
 
 ```bash
   npm install
+```
+
+Create environment variables file and add the environment variables
+
+```bash
+  touch .env
+```
+
+> Remember to change the values of the environment variables to your own.
+
+Unix based systems:
+
+```bash
+
+echo "PORT=5000" > .env
+echo "DATABASE_URL=postgres://username:password@hostname:5432/databasename" >> .env
+
+```
+
+Windows:
+
+```bash
+echo PORT=5000 > .env
+echo DATABASE_URL=postgres://username:password@hostname:5432/databasename >> .env
 ```
 
 Run the app
@@ -225,6 +246,36 @@ Go to the project directory
 
 ```bash
   cd igma-project/
+```
+
+Create environment variables file and add the environment variables
+
+Unix based systems:
+
+```bash
+  touch .env
+```
+
+```bash
+echo "PORT=5000" > .env
+echo "POSTGRES_USER=postgres" >> .env
+echo "POSTGRES_PASSWORD=postgres" >> .env
+echo "POSTGRES_DB=igma-project" >> .env
+echo "POSTGRES_HOST=igma-postgres-db" >> .env
+echo "DATABASE_URL=postgres://\${POSTGRES_USER}:\${POSTGRES_PASSWORD}@\${POSTGRES_HOST}:5432/\${POSTGRES_DB}" >> .env
+
+```
+
+Windows:
+
+```bash
+echo PORT=5000 > .env
+echo POSTGRES_USER=postgres >> .env
+echo POSTGRES_PASSWORD=postgres >> .env
+echo POSTGRES_DB=igma-project >> .env
+echo POSTGRES_HOST=igma-postgres-db >> .env
+echo DATABASE_URL=postgres://%POSTGRES_USER%:%POSTGRES_PASSWORD%@%POSTGRES_HOST%:5432/%POSTGRES_DB% >> .env
+
 ```
 
 Run the app
