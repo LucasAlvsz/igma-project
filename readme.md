@@ -53,12 +53,8 @@ Igma project is a RESTful API project built using TypeScript. The project provid
 
 -   [Environment Variables](#environment-variables)
 
-    -   [Without Docker](#without-docker)
-    -   [With Docker](#with-docker)
-
 -   [Run Locally](#run-locally)
-    -   [Without Docker](#without-docker-run)
-    -   [With Docker](#with-docker-run)
+
 
 ## API Reference
 
