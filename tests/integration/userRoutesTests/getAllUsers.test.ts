@@ -35,11 +35,9 @@ describe("GET /users", () => {
 
 	it("should return only the users that match the query params", async () => {
 		const users = userFactory.createManyUsersBody(3)
-		console.log(users)
 		await prisma.user.createMany({ data: users })
 
 		const response = await agent.get("/users/?limit=1&page=1")
-		console.log(response.body)
 		expect(response.status).toBe(200)
 		expect(response.body.length).toBe(1)
 		expect(response.body[0].name).toBe(users[0].name)

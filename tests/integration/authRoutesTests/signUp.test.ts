@@ -21,7 +21,6 @@ afterAll(async () => {
 describe("POST /sign-up", () => {
 	it("should create a new user", async () => {
 		const userBody = userFactory.createUserBody()
-		console.log(userBody)
 		const response = await agent.post("/sign-up").send(userBody)
 		expect(response.status).toBe(201)
 
