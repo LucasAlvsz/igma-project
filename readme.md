@@ -179,7 +179,9 @@ To run this project, you will need to add the following environment variables to
 
 <a name="without-docker-run"></a>
 
-##### Without Docker (you will need to have Node.js and PostgreSQL installed on your machine]:
+### Without Docker:
+
+> You will need to have Node.js and PostgreSQL installed on your machine
 
 Clone the project
 
@@ -209,9 +211,9 @@ Run the app
 
 #
 
-<a name="with-docker-run"></a>
+### With Docker [recommended]:
 
-##### With Docker [recommended] (you will need to have Docker and Docker Compose installed on your machine):
+> You will need to have Docker and Docker Compose installed on your machine
 
 Clone the project
 
