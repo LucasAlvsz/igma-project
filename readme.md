@@ -28,7 +28,7 @@
 
 <br/>
 
-# Description
+## Description
 
 Igma project is a RESTful API project built using TypeScript. The project provides sign-up and user management functionalities.
 </br>
@@ -43,31 +43,18 @@ Igma project is a RESTful API project built using TypeScript. The project provid
 
 ## Table of Contents
 
-- [Description](#description)
-  - [Features](#features)
-  - [Table of Contents](#table-of-contents)
-  - [API Reference](#api-reference)
-      - [Sign-up](#sign-up)
-      - [Request:](#request)
-- [](#)
-      - [Get all users](#get-all-users)
-      - [Request:](#request-1)
-      - [Response:](#response)
-- [](#-1)
-      - [Get user by cpf](#get-user-by-cpf)
-      - [Request:](#request-2)
-      - [Response:](#response-1)
-      - [Params:](#params)
-  - [Environment Variables](#environment-variables)
-        - [Without Docker:](#without-docker)
-- [](#-2)
-        - [With Docker:](#with-docker)
-  - [Run Locally](#run-locally)
-        - [Without Docker:](#without-docker-1)
-- [](#-3)
-        - [With Docker:](#with-docker-1)
-  - [Authors](#authors)
-- [](#-4)
+-   [API Reference](#api-reference)
+    -   [Sign-up](#sign-up)
+    -   [Get all users](#get-all-users)
+    -   [Get user by cpf](#get-user-by-cpf)
+
+-   [Environment Variables](#environment-variables)
+    -   [Without Docker](#without-docker)
+    -   [With Docker](#with-docker)
+
+-   [Run Locally](#run-locally)
+    -   [Without Docker](#without-docker)
+    -   [With Docker](#with-docker)
 
 ## API Reference
 
