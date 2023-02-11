@@ -43,30 +43,21 @@ Igma project is a RESTful API project built using TypeScript. The project provid
 
 ## Demo
 
-The application has been deployed to AWS EC2 and is available for testing at
+The application has been deployed to AWS EC2 and is available for testing at < href="http://ec2-18-228-220-146.sa-east-1.compute.amazonaws.com/" </a>
 
 Please note that this is just for testing purposes and the environment may not be configured for production use.
 
 ## Table of Contents
 
-- [](#)
-      - [Get all users](#get-all-users)
-      - [Request:](#request-1)
-      - [Response:](#response)
-- [](#-1)
-      - [Get user by cpf](#get-user-by-cpf)
-      - [Request:](#request-2)
-      - [Response:](#response-1)
-  - [Environment Variables](#environment-variables)
-        - [Without Docker:](#without-docker)
-- [](#-2)
-        - [With Docker:](#with-docker)
-  - [Run Locally](#run-locally)
-    - [Without Docker:](#without-docker-1)
-- [](#-3)
-    - [With Docker \[recommended\]:](#with-docker-recommended)
-  - [Authors](#authors)
-- [](#-4)
+-   [API Reference](#api-reference)
+
+    -   [Sign-up](#sign-up)
+    -   [Get all users](#get-all-users)
+    -   [Get user by cpf](#get-user-by-cpf)
+
+-   [Environment Variables](#environment-variables)
+
+-   [Run Locally](#run-locally)
 
 ## API Reference
 
