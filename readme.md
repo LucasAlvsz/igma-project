@@ -43,7 +43,7 @@ Igma project is a RESTful API project built using TypeScript. The project provid
 
 ## Demo
 
-The application has been deployed to AWS EC2 and is available for testing at < href="http://ec2-18-228-220-146.sa-east-1.compute.amazonaws.com/" </a>
+The application has been deployed to AWS EC2 and is available for testing at http://ec2-18-228-220-146.sa-east-1.compute.amazonaws.com/
 
 Please note that this is just for testing purposes and the environment may not be configured for production use.
 
