@@ -292,7 +292,7 @@ Run the app
 
 ### Without Docker:
 
-> Follow the steps to run the app without Docker and then run the following commands:
+> Follow the steps to run the app without Docker but instead of running the app, run the following commands:
 
 Deploy the database schema
 
