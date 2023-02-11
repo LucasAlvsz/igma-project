@@ -43,17 +43,16 @@ Igma project is a RESTful API project built using TypeScript. The project provid
 
 ## Table of Contents
 
-## Table of Contents
-
--   [API Reference](#api-reference)
-
-    -   [Sign-up](#sign-up)
-    -   [Get all users](#get-all-users)
-    -   [Get user by cpf](#get-user-by-cpf)
-
--   [Environment Variables](#environment-variables)
-
--   [Run Locally](#run-locally)
+-   [](#) - [Get all users](#get-all-users) - [Request:](#request-1) - [Response:](#response)
+-   [](#-1) - [Get user by cpf](#get-user-by-cpf) - [Request:](#request-2) - [Response:](#response-1)
+    -   [Environment Variables](#environment-variables) - [Without Docker:](#without-docker)
+-   [](#-2) - [With Docker:](#with-docker)
+    -   [Run Locally](#run-locally)
+        -   [Without Docker:](#without-docker-1)
+-   [](#-3)
+    -   [With Docker \[recommended\]:](#with-docker-recommended)
+    -   [Authors](#authors)
+-   [](#-4)
 
 ## API Reference
 
@@ -135,12 +134,6 @@ GET /users/:cpf
 	"cpf": "330.502.155-18"
 }
 ```
-
-#### Params:
-
-| Params | Type     | Description   |
-| :----- | :------- | :------------ |
-| `id`   | `string` | **Required**. |
 
 </br>
 
