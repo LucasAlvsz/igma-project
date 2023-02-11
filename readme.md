@@ -101,7 +101,7 @@ GET /users
 	[
 		{
 			"id": 1,
-			"cpf": "424.526.254-00",
+			"cpf": "42452625400",
 			"name": "Maria Vitória Gomes",
 			"birthDate": "1983-04-11T05:22:45.658Z"
 		},
@@ -138,7 +138,7 @@ GET /users/:cpf
 	"id": 46,
 	"name": "Maria Laura Melo",
 	"birthDate": "1992-11-14T01:34:52.426Z",
-	"cpf": "330.502.155-18"
+	"cpf": "33050215518"
 }
 ```
 
