@@ -10,7 +10,7 @@
 		"prisma:deploy": "prisma migrate deploy",
 		"prisma:dev": "prisma migrate dev",
 		"build": "tsup src --outDir build --format esm",
-		"prestart": "npm run prisma:deploy && npm run build",
+		"prestart": "npm run build && npm run prisma:deploy",
 		"start": "node build/server.js",
 		"test": "jest --passWithNoTests -i",
 		"test:remote": "npm run prisma:dev && npm run test",
