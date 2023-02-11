@@ -41,17 +41,32 @@ Igma project is a RESTful API project built using TypeScript. The project provid
 
 </br>
 
+## Demo
+
+The application has been deployed to AWS EC2 and is available for testing at
+
+Please note that this is just for testing purposes and the environment may not be configured for production use.
+
 ## Table of Contents
 
--   [API Reference](#api-reference)
-
-    -   [Sign-up](#sign-up)
-    -   [Get all users](#get-all-users)
-    -   [Get user by cpf](#get-user-by-cpf)
-
--   [Environment Variables](#environment-variables)
-
--   [Run Locally](#run-locally)
+- [](#)
+      - [Get all users](#get-all-users)
+      - [Request:](#request-1)
+      - [Response:](#response)
+- [](#-1)
+      - [Get user by cpf](#get-user-by-cpf)
+      - [Request:](#request-2)
+      - [Response:](#response-1)
+  - [Environment Variables](#environment-variables)
+        - [Without Docker:](#without-docker)
+- [](#-2)
+        - [With Docker:](#with-docker)
+  - [Run Locally](#run-locally)
+    - [Without Docker:](#without-docker-1)
+- [](#-3)
+    - [With Docker \[recommended\]:](#with-docker-recommended)
+  - [Authors](#authors)
+- [](#-4)
 
 ## API Reference
 
@@ -276,7 +291,7 @@ Run the app
   docker-compose up
 ```
 
-> The app will be running on http://localhost:5000/ by default.
+> The app will be running on http://localhost:80/ by default.
 
 </br>
 
