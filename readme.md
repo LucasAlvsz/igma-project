@@ -43,18 +43,22 @@ Igma project is a RESTful API project built using TypeScript. The project provid
 
 ## Table of Contents
 
+## Table of Contents
+
 -   [API Reference](#api-reference)
+
     -   [Sign-up](#sign-up)
     -   [Get all users](#get-all-users)
     -   [Get user by cpf](#get-user-by-cpf)
 
 -   [Environment Variables](#environment-variables)
+
     -   [Without Docker](#without-docker)
     -   [With Docker](#with-docker)
 
 -   [Run Locally](#run-locally)
-    -   [Without Docker](#without-docker)
-    -   [With Docker](#with-docker)
+    -   [Without Docker](#without-docker-run)
+    -   [With Docker](#with-docker-run)
 
 ## API Reference
 
@@ -177,7 +181,9 @@ To run this project, you will need to add the following environment variables to
 
 > Remember to create a .env file with the environment variables in the root of the project.
 
-##### Without Docker:
+<a name="without-docker-run"></a>
+
+##### Without Docker (you will need to have Node.js and PostgreSQL installed on your machine]:
 
 Clone the project
 
@@ -207,7 +213,9 @@ Run the app
 
 #
 
-##### With Docker:
+<a name="with-docker-run"></a>
+
+##### With Docker [recommended] (you will need to have Docker and Docker Compose installed on your machine):
 
 Clone the project
 
