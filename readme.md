@@ -59,6 +59,8 @@ Please note that this is just for testing purposes and the environment may not b
 
 -   [Run Locally](#run-locally)
 
+-   [Run Tests](#run-tests)
+
 ## API Reference
 
 #### Sign-up
@@ -285,6 +287,66 @@ Run the app
 > The app will be running on http://localhost:80/ by default.
 
 </br>
+
+## Run Tests
+
+### Without Docker:
+
+> Follow the steps to run the app without Docker and then run the following commands:
+
+Deploy the database schema
+
+```bash
+  npm run prisma:deploy
+```
+
+Run the tests
+
+```bash
+  npm run test
+```
+
+### With Docker:
+
+> Follow the steps to run the app with Docker until "Go to the project directory" and then run the following commands:
+
+Create environment variables file and add the environment variables
+
+Unix based systems:
+
+```bash
+  touch .env.test
+```
+
+```bash
+echo "PORT=5000" > .env.test
+echo "POSTGRES_USER=postgres" >> .env.test
+echo "POSTGRES_PASSWORD=postgres" >> .env.test
+echo "POSTGRES_DB=igma-project-test" >> .env.test
+echo "POSTGRES_HOST=database-ci" >> .env.test
+echo "DATABASE_URL=postgres://\${POSTGRES_USER}:\${POSTGRES_PASSWORD}@\${POSTGRES_HOST}:5432/\${POSTGRES_DB}" >> .env.test
+
+```
+
+Windows:
+
+```bash
+echo PORT=5000 > .env.test
+echo POSTGRES_USER=postgres >> .env.test
+echo POSTGRES_PASSWORD=postgres >> .env.test
+echo POSTGRES_DB=igma-project-test >> .env.test
+echo POSTGRES_HOST=database-ci >> .env.test
+echo DATABASE_URL=postgres://%POSTGRES_USER%:%POSTGRES_PASSWORD%@%POSTGRES_HOST%:5432/%POSTGRES_DB% >> .env.test
+
+```
+
+Run the tests
+
+```bash
+  docker-compose -f docker-compose-tests.yml run api-ci npm run test:remote
+```
+
+#
 
 ## Authors
 
