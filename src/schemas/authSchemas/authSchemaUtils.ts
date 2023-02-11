@@ -1,3 +1,4 @@
+import { cpfUtils } from "@/utils"
 import Joi from "joi"
 const MESSAGES = {
 	"cpf.pattern.invalid": "Invalid CPF Format",
@@ -31,7 +32,7 @@ const validateDigit = (checkedSum: number, digit: number) => {
 const validateCpf = (cpf: string, helpers: Joi.CustomHelpers) => {
 	if (!validateCpfPattern(cpf)) return helpers.error("cpf.pattern.invalid")
 
-	const formattedCpf = cpf.replace(/[^\d]/g, "")
+	const formattedCpf = cpfUtils.formatCpf(cpf)
 	const formattedCpfForValidation = formattedCpf.slice(0, 9).split("")
 
 	let checkedSum = calculateCpfCheckSum(formattedCpfForValidation, 10)

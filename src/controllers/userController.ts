@@ -1,10 +1,12 @@
 import { Request, Response } from "express"
 import { userService } from "@/services"
 import { QueryParams } from "@/types/userTypes"
+import { cpfUtils } from "@/utils"
 
 const getuserByCpf = async (req: Request, res: Response) => {
 	const { cpf } = req.params
-	const user = await userService.getUserByCpf(cpf)
+	const formattedCpf = cpfUtils.formatCpf(cpf)
+	const user = await userService.getUserByCpf(formattedCpf)
 	res.send(user)
 }
 
